@@ -1,0 +1,4 @@
+include "richtextfx", "richtextfx-demos"
+
+//project.specificationVersion = '1.0'
+//project.version = '1.0'
