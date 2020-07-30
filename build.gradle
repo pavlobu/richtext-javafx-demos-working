@@ -177,5 +177,5 @@ task SpellCheckingDemo(type: JavaExec, dependsOn: classes,
 }
 
 //mainClassName = 'org.fxmisc.richtext.demo.XMLEditorDemo'
-mainClassName = 'org.fxmisc.richtext.demo.MultiCaretAndSelectionDemo'
-//mainClassName = 'org.fxmisc.richtext.demo.richtext.RichTextDemo'
+//mainClassName = 'org.fxmisc.richtext.demo.MultiCaretAndSelectionDemo'
+mainClassName = 'org.fxmisc.richtext.demo.richtext.RichTextDemo'

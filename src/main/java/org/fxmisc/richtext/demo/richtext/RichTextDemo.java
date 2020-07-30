@@ -161,6 +161,12 @@ public class RichTextDemo extends Application {
         cutBtn.disableProperty().bind(selectionEmpty);
         copyBtn.disableProperty().bind(selectionEmpty);
 
+        area.getCaretSelectionBind().selectedTextProperty().addListener(e -> {
+            System.out.println("selected ");
+            area.getSelectedText();
+            area.getCaretSelectionBind().selectedTextProperty();
+        });
+
         area.beingUpdatedProperty().addListener((o, old, beingUpdated) -> {
             if(!beingUpdated) {
                 boolean bold, italic, underline, strike;

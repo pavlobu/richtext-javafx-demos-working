@@ -26,27 +26,23 @@ public class MultiCaretAndSelectionDemo extends Application {
         }
         area = new InlineCssTextArea(sb.toString());
         area.setStyle("-fx-font-family: consolas; -fx-font-size: 40pt;");
-//        area.setOnSelection
-
-        area.setOnInsideSelectionMousePressReleased(e -> {
-            System.out.println("SUKE SELLELELELELE");
-            System.out.println(area.getSelectedText());
-        });
-
-        area.setOnSelectionDropped(e -> {
-            System.out.println("-e-w--e-we-");
-            System.out.println(area.getSelectedText());
-        });
 
         area.selectAll();
 
-//        area.setOnInsideSelectionMousePressReleased(e -> {
-//            System.out.println("SUKE SELLELELELELE");
+        area.getCaretSelectionBind().selectedTextProperty().addListener(e -> {
+            System.out.println("TEXT SELECTED:");
+            System.out.println(e.getClass());
+//            area.getCaretSelectionBind()
 //            System.out.println(area.getSelectedText());
-//        });
+        });
 
-//        area.setOnSelect
-//        area.setOnSelectionDropped();
+
+//        System.out.println("PRINTING accessible text");
+//        area.getChildrenUnmodifiable().forEach(n -> {
+//            System.out.println(n.getAccessibleText());
+//        });
+//        area.getChil
+
 
         setupRTFXSpecificCSSShapes();
 
@@ -56,6 +52,7 @@ public class MultiCaretAndSelectionDemo extends Application {
 
         // select some other range with the regular caret/selection before showing area
         area.selectRange(2, 0, 2, 4);
+
 
         primaryStage.setScene(new Scene(area, 400, 400));
         primaryStage.show();
@@ -93,10 +90,6 @@ public class MultiCaretAndSelectionDemo extends Application {
         }
         // select something so it is visible
         extraSelection.selectRange(7, 2, 7, 8);
-
-        System.out.println("printing selected text");
-        System.out.println(extraSelection.getSelectedText());
-
     }
 
     /**
